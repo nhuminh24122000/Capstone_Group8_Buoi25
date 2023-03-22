@@ -1,0 +1,6 @@
+.table thead th,
+.table tbody td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1rem;
+}

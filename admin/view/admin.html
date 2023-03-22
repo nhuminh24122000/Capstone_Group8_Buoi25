@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Admin Page</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <!-- Custom Theme Style -->
+    <link href="/assets/css/admin.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container body">
+        <div class="x_title">
+            <button type="button" data-toggle="modal" data-target="#myModal"
+                class="btn btn-sm btn-dark waves-effect waves-light" id="btnAdd">
+                <i class="fa fa-plus-circle"></i> Add product </button>
+        </div>
+        <div class="x_content">
+
+            <!-- start project list -->
+            <table class="table table-striped projects">
+                <thead>
+                    <tr>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Màn Hình</th>
+                        <th>Camera Sau</th>
+                        <th>Camera Trước</th>
+                        <th>Hình Ảnh</th>
+                        <th>Mô Tả</th>
+                        <th>Loại</th>
+                        <th style="width: 10%">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="notifyProducts">
+                </tbody>
+            </table>
+            <!-- end project list -->
+
+        </div>
+
+        <!-- The Model -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal Heading</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="formProduct">
+                            <div class="form-group">
+                                <label>Tên Sản Phẩm</label>
+                                <input id="namePro" class="form-control" placeholder="Nhập vào tên sản phẩm" />
+                            </div>
+                            <div class="form-group">
+                                <label>Giá</label>
+                                <input id="pricePro" class="form-control" placeholder="Nhập vào giá" />
+                            </div>
+                            <div class="form-group">
+                                <label>Màn Hình</label>
+                                <input id="screenPro" class="form-control" placeholder="Nhập size màn hình" />
+                            </div>
+                            <div class="form-group">
+                                <label>Camera Sau</label>
+                                <input id="backCamPro" class="form-control" placeholder="Nhập số liệu Camera sau" />
+                            </div>
+                            <div class="form-group">
+                                <label>Camera Trước</label>
+                                <input id="frontCamPro" class="form-control" placeholder="Nhập số liệu Camera trước" />
+                            </div>
+                            <div class="form-group">
+                                <label>Hình Ảnh</label>
+                                <input id="imgPro" class="form-control" placeholder="Nhập vào hình sản phẩm" />
+                            </div>
+                            <div class="form-group">
+                                <label for="descPro">Mô tả</label>
+                                <textarea id="descPro" class="form-control" name="" id="" cols="30"
+                                    rows="10"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Loại Sản Phẩm</label>
+                                <input id="LoaiSP" class="form-control" placeholder="Nhập loại sản phẩm" />
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <script src="../model/Product.js"></script>
+    <script src="../services/ProductService.js"></script>
+
+    <script src="../controller/main.js"></script>
+</body>
+
+</html>
