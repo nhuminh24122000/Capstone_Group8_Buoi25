@@ -9,118 +9,321 @@
 
     <title>Admin Page</title>
 
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
     <!-- Custom Theme Style -->
     <link href="/assets/css/admin.css" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="nav-md">
     <div class="container body">
-        <div class="x_title">
-            <button type="button" data-toggle="modal" data-target="#myModal"
-                class="btn btn-sm btn-dark waves-effect waves-light" id="btnAdd">
-                <i class="fa fa-plus-circle"></i> Add product </button>
-        </div>
-        <div class="x_content">
-
-            <!-- start project list -->
-            <table class="table table-striped projects">
-                <thead>
-                    <tr>
-                        <th>Tên Sản Phẩm</th>
-                        <th>Giá</th>
-                        <th>Màn Hình</th>
-                        <th>Camera Sau</th>
-                        <th>Camera Trước</th>
-                        <th>Hình Ảnh</th>
-                        <th>Mô Tả</th>
-                        <th>Loại</th>
-                        <th style="width: 10%">Hành động</th>
-                    </tr>
-                </thead>
-                <tbody id="notifyProducts">
-                </tbody>
-            </table>
-            <!-- end project list -->
-
-        </div>
-
-        <!-- The Model -->
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Modal Heading</h4>
-                        <button type="button" class="close" data-dismiss="modal">
-                            &times;
-                        </button>
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="./admin.html" class="site_title"><i class="fa fa-github-alt"></i>
+                            <span>Phone Store</span></a>
                     </div>
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <form id="formProduct">
-                            <div class="form-group">
-                                <label>Tên Sản Phẩm</label>
-                                <input id="namePro" class="form-control" placeholder="Nhập vào tên sản phẩm" />
-                            </div>
-                            <div class="form-group">
-                                <label>Giá</label>
-                                <input id="pricePro" class="form-control" placeholder="Nhập vào giá" />
-                            </div>
-                            <div class="form-group">
-                                <label>Màn Hình</label>
-                                <input id="screenPro" class="form-control" placeholder="Nhập size màn hình" />
-                            </div>
-                            <div class="form-group">
-                                <label>Camera Sau</label>
-                                <input id="backCamPro" class="form-control" placeholder="Nhập số liệu Camera sau" />
-                            </div>
-                            <div class="form-group">
-                                <label>Camera Trước</label>
-                                <input id="frontCamPro" class="form-control" placeholder="Nhập số liệu Camera trước" />
-                            </div>
-                            <div class="form-group">
-                                <label>Hình Ảnh</label>
-                                <input id="imgPro" class="form-control" placeholder="Nhập vào hình sản phẩm" />
-                            </div>
-                            <div class="form-group">
-                                <label for="descPro">Mô tả</label>
-                                <textarea id="descPro" class="form-control" name="" id="" cols="30"
-                                    rows="10"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Loại Sản Phẩm</label>
-                                <input id="LoaiSP" class="form-control" placeholder="Nhập loại sản phẩm" />
-                            </div>
-                        </form>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="/assets/img/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>Minh Trần</h2>
+                        </div>
                     </div>
-                    <!-- Modal footer -->
-                    <div class="modal-footer"></div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#">Dashboard</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Quản lý <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#">Quản lý nhân viên</a></li>
+                                        <li><a href="#">Quản lý khách hàng</a></li>
+                                        <li><a href="./admin.html">Quản lý sản phẩm</a></li>
+                                        <li><a href="#">Quản lý hóa đơn</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Báo cáo <span
+                                            class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#">Báo cáo bán hàng</a></li>
+                                        <li><a href="#">Báo cáo nhân viên</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-user"></i> Tài khoản <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#">Thay đổi thông tin</a></li>
+                                        <li><a href="/customer/view/store.html">Website bán hàng</a></li>
+                                        <li><a href="/index.html">Thoát</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
                 </div>
             </div>
-            <!-- /page content -->
 
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <nav class="nav navbar-nav">
+                        <ul class=" navbar-right">
+                            <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
+                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="/assets/img/img.jpg" alt="">Minh Trần
+                                </a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right"
+                                    aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="#">
+                                        <span class="badge bg-red pull-right">50%</span>
+                                        <span>Settings</span>
+                                    </a>
+                                    <a class="dropdown-item" href="#">Help</a>
+                                    <a class="dropdown-item" href="/index.html"><i
+                                            class="fa fa-sign-out pull-right"></i>
+                                        Log Out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>Phone Management</h3>
+                    </div>
+
+                    <div class="title_right">
+                        <div class="col-md-5 col-sm-5 form-group pull-right top_search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for..." id="searchName" >
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <button type="button" data-toggle="modal" data-target="#myModal"
+                                    class="btn btn-sm btn-dark waves-effect waves-light" id="btnAdd">
+                                    <i class="fa fa-plus-circle"></i> Add product </button>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Settings 1</a>
+                                            <a class="dropdown-item" href="#">Settings 2</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <!-- start project list -->
+                                <table class="table table-striped projects">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên Sản Phẩm</th>
+                                            <th style="width: 10%">Giá 
+                                                <span id="sort-asc" class="sort-icon" data-value="asc"></span>
+                                                <span id="sort-desc" class="sort-icon" data-value="desc"></span>
+                                            </th>
+                                            <th>Màn Hình</th>
+                                            <th>Camera Sau</th>
+                                            <th>Camera Trước</th>
+                                            <th style="width: 15%">Hình Ảnh</th>
+                                            <th style="width: 15%">Mô Tả</th>
+                                            <th>Loại</th>
+                                            <th style="width: 10%">Hành động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="notifyListPro">
+                                    </tbody>
+                                </table>
+                                <!-- end project list -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer content -->
+            <footer>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            © 2023 Copyright: <a href="#">Phone Store</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="#">About Us</a>
+                                <a href="#">Help</a>
+                                <a href="#">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+
+            <!-- The Model -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Phone!!!</h4>
+                            <button type="button" class="close" data-dismiss="modal">
+                                &times;
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form role="form" id="formProduct">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id="namePro" class="form-control" placeholder="Nhập tên sản phẩm" />
+                                    </div>
+                                    <span class="notifyPro" id="notifyName"></span>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id="pricePro" class="form-control" placeholder="Nhập giá" />
+                                    </div>
+                                    <span class="notifyPro" id="notifyPrice"></span>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id="screenPro" class="form-control" placeholder="Nhập màn hình" />
+                                    </div>
+                                    <span class="notifyPro" id="notifyScreen"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id="backCamPro" class="form-control"
+                                            placeholder="Nhập số liệu Camera sau" />
+                                    </div>
+                                    <span class="notifyPro" id="notifyBackCam"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id="frontCamPro" class="form-control"
+                                            placeholder="Nhập số liệu Camera trước" />
+                                    </div>
+                                    <span class="notifyPro" id="notifyFrontCam"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id="imgPro" class="form-control" placeholder="Nhập hình sản phẩm" />
+                                    </div>
+                                    <span class="notifyPro" id="notifyImg"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <textarea id="descPro" class="form-control" name="" id="" cols="30"
+                                            rows="5"></textarea>
+                                    </div>
+                                    <span class="notifyPro" id="notifyDesc"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <select aria-label="State" class="form-control" id="typePro">
+                                            <option>Loại sản phẩm</option>
+                                            <option id="iphone">Iphone</option>
+                                            <option id="samsung">Samsung</option>
+                                        </select>
+                                    </div>
+                                    <span class="notifyPro" id="notifyType"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer"></div>
+                    </div>
+                </div>
+                <!-- /page content -->
+
+            </div>
         </div>
     </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="/assets/lib/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../controller/custom.js"></script>
 
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
     <script src="../model/Product.js"></script>
     <script src="../services/ProductService.js"></script>
+    <script src="../controller/Validation.js"></script>
+
 
     <script src="../controller/main.js"></script>
 </body>

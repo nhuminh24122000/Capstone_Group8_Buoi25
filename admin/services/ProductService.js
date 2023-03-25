@@ -1,8 +1,8 @@
-function ProductServive() {
+function ProductService() {
     this.getProductList = function() {
         return axios({
             method: 'get',
-            url: 'https://64172b2b9863b4d772a45d17.mockapi.io/Products'
+            url: 'https://6408811a8ee73db92e42a343.mockapi.io/PhoneStore_Group8'
         })
 
     }
@@ -10,7 +10,7 @@ function ProductServive() {
     this.addProductSer = function(product) {
         return axios({
             method: 'post',
-            url: 'https://64172b2b9863b4d772a45d17.mockapi.io/Products',
+            url: 'https://6408811a8ee73db92e42a343.mockapi.io/PhoneStore_Group8',
             data: product
         })
     }
@@ -18,7 +18,7 @@ function ProductServive() {
     this.deleteProductSer = function(id) {
         return axios({
             method: 'delete',
-            url: `https://64172b2b9863b4d772a45d17.mockapi.io/Products/${id}`,
+            url: `https://6408811a8ee73db92e42a343.mockapi.io/PhoneStore_Group8/${id}`,
         })
     }
 
@@ -26,14 +26,14 @@ function ProductServive() {
     this.getProductItem = function(id) {
         return axios({
             method: 'get',
-            url: `https://64172b2b9863b4d772a45d17.mockapi.io/Products/${id}`,
+            url: `https://6408811a8ee73db92e42a343.mockapi.io/PhoneStore_Group8/${id}`,
         })
     }
 
-    this.updateProductSer = function(productUpdate, id) {
+    this.updateProductSer = function(productUpdate,id) {
         return axios({
             method: 'put',
-            url: `https://64172b2b9863b4d772a45d17.mockapi.io/Products/${id}`,
+            url: `https://6408811a8ee73db92e42a343.mockapi.io/PhoneStore_Group8/${id}`,
             data: productUpdate
         })
     }
