@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.nav1 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.nav2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.navbar-brand {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    margin-left: -10rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+.content {
+  padding-top: 80px;
+}
+.navbar-dark .navbar-brand {
+    color: #fff;
+}
+.nav-link:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    /* background: #000; */
+  }
+
+
+
+
+
+  
+  .common-bg {
+    background-image: url(../img/banner.JPG);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .fa-star:before {
+    padding-left: 5px;
+}
+.banner-image .btn {
+    font-size: 18px;
+}
+.banner-phone-image img {
+    width: 800px;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+
+.form-select {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+  }
+
+  /* Tùy chỉnh giao diện cho các option */
+  option {
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+
+  option:hover {
+    background-color: #e9ecef;
+  }
+  
+
+  .content-details,
+  .content-overlay {
+    border-radius: 10px;
+  }
+  
+  .card-wrapper {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card:hover .card-wrapper {
+    transform: scale(1.1);
+  }
+  
+  .card:hover .content-overlay {
+    opacity: 1;
+  }
+  
+  .content-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card:hover .content-details {
+    opacity: 1;
+  }
+  
+  
+  .btn-add-to-cart {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-add-to-cart:hover {
+    background-color: #e0a800;
+    color: #000;
+    transform: scale(1.1);
+  }
+  
+  .btn-add-to-cart:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.5);
+  }
+  
+  
+  
+
+
+
+
+
+  .meh {
+    position: relative;
+    color: #405461;
+    font-family: 'Muli';
+}
+.cart__contents {
+    position: fixed;
+    top: 10%;
+    bottom: 0;
+    left: 100%;
+    width: 500px;
+    height: 92%;
+    overflow: auto;
+    background-color: #fff;
+    transition: all 0.25s ease-in-out;
+    transform: translate(-100%, 0);
+}
+.cart__products, .cart__totals {
+    padding: 28px;
+}   
+.cart__totals {
+    background-color: #f7f7f7;
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    caption-side: bottom;
+}
+.form__footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+small {
+    font-size: 75%;
+    color: #9da3af;
+}
+.first {
+    order: 1;
+}
+.btn {
+    position: relative;
+    border: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    color: white !important;
+    font-family: 'Muli';
+    font-size: 14px;
+    line-height: 14px;
+    background-color: #294d5c !important;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.yellow-btn {
+    background-color: #f0b80f !important; 
+}
+.red-btn {
+    background-color: #df461f !important;
+}
+
+/* .hide {
+  display: none !important;
+}
+.meh {
+  display: none;
+} */
+
+/* .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+} */
+/* CSS for the social media section */
+footer .border-bottom {
+    border-color: #666;
+  }
+  footer .text-reset:hover {
+    color: #ffc107;
+  }
+  
+  /* CSS for the brands section */
+  footer p {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  footer h6 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  footer i{
+    margin: 0 5px 0 5px;
+  }
+  footer p a {
+    color: #bbb;
+    font-size: 14px;
+    transition: color 0.2s ease-in-out;
+  }
+  footer p a:hover {
+    color: #ffc107;
+  }
+  
+  /* CSS for the useful links section */
+  footer h6 {
+    color: #fff;
+    font-weight: 600;
+  }
+  footer p a {
+    color: #bbb;
+    font-size: 14px;
+    transition: color 0.2s ease-in-out;
+  }
+  footer p a:hover {
+    color: #ffc107;
+  }
+  
+  /* CSS for the contact section */
+  footer .col-md-4 p {
+    color: #bbb;
+  }
+  footer .col-md-4 i {
+    color: #ffc107;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  footer .text-reset:hover {
+    color: #ffc107;
+  }
+  
+  /* CSS for the entire footer */
+  footer {
+    background-color: #222;
+    color: #bbb;
+  }
+  
