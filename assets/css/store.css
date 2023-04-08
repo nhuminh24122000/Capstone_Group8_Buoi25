@@ -202,9 +202,22 @@ img {
     flex: 1;
     margin-right: 20px;
 }
-
+.cart-container {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: antiquewhite;
+}
+#cartList {
+  float: left;
+  width: 70%;
+}
 .cart__totals {
-    width: 300px;
+    /* width: 300px; */
+    float: right;
+    /* width: 30%; */
 }
 
 .products {
@@ -216,7 +229,7 @@ img {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid ;
     padding-bottom: 20px;
 }
 

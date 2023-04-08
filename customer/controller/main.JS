@@ -45,7 +45,6 @@ const menu =[
     }
     ]
 
-
 let category = 'all';
 
 const setCategory = (type) => {
@@ -142,7 +141,7 @@ renderListPhone(menu);
 
 
 
-
+let cartItemCount = 0;
 
 
 
@@ -164,10 +163,28 @@ btn_addtoCart.forEach(function (button,index) {
         const productPrice = product.querySelector('.text-muted').innerText;
         // console.log(productPrice);
         const productId = btnItem.getAttribute('data-id');
-        addtocart(productPrice,productName,productImg,productId);
+        
+        // console.log(quantityResult )
+
+
+        cartItemCount++;
+        updateCartCount(cartItemCount);
+
+
+        addtocart(productPrice,productName,productImg,productId,);
     })
 })
+function updateCartCount(count) {
+  const cartCountElement = document.getElementById('cartCount');
+  cartCountElement.textContent = count;
+}
+let cartTotalsCreated = false;
+let subtotal = 0;
+let quantity = 1;
+let total = 0;
 function addtocart(productPrice,productName,productImg,productId){
+  
+
   cartItem = document.getElementById(`cart-item-${productId}`);
   if( cartItem){
     increaseQuantity(productId);
@@ -201,53 +218,70 @@ function addtocart(productPrice,productName,productImg,productId){
             </div>
             
           </div>
-          <div class="cart__totals" >
-          <table class="totals">
-            <tbody>
-              <tr>
-                <th class="align-left font-normal tertiary">Subtotal</th>
-                <td class="align-right" id="subTotal">$0</td>
-              </tr>
-              <tr>
-                <th class="align-left font-normal tertiary">
-                  Shipping <small>(estimated)</small>
-                </th>
-                <td class="align-right" id="shipping">$10</td>
-              </tr>
-              <tr>
-                <th class="align-left font-normal tertiary">
-                  Tax <small>(estimated)</small>
-                </th>
-                <td class="align-right" id="tax">$0</td>
-              </tr>
-              <tr>
-                <th class="align-left">Total</th>
-                <td class="align-right" id="priceTotal">$0</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="2" class="tertiary">
-                  <small>Estimations based on New York, United States</small>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-          <div class="form__footer ">
-            <button class="btn  first js-toggle-cart">Continue Shopping</button>
-            <button class="btn yellow-btn" onclick="payNow()">Pay Now</button>
-            <button class="btn me-5 ms-0 px-4 red-btn" onclick="emptyCart()" id="emptyCart">
-              <i class="fa-solid fa-trash me-2"></i> Empty Cart
-            </button>
-          </div>
-        </div>
-          
     `
     addDiv.innerHTML = divContent;
     const cartTable = document.querySelector("#cartList");
     // console.log(cartTable)
     cartTable.append(addDiv);
+    
 }
+
+if (!cartTotalsCreated) {
+  const cartTotalsDiv = document.createElement('div');
+  
+  
+  cartTotalsDiv.classList.add('cart__totals');
+  const cartTotalsContent = `
+  <div class="cart__totals" >
+  <table class="totals">
+    <tbody>
+      <tr>
+        <th class="align-left font-normal tertiary">Subtotal</th>
+        <td class="align-right" id="subTotal">$0</td>
+      </tr>
+      <tr>
+        <th class="align-left font-normal tertiary">
+          Shipping <small>(estimated)</small>
+        </th>
+        <td class="align-right" id="shipping">$10</td>
+      </tr>
+      <tr>
+        <th class="align-left font-normal tertiary">
+          Tax <small>(estimated)</small>
+        </th>
+        <td class="align-right" id="tax">$0</td>
+      </tr>
+      <tr>
+        <th class="align-left">Total</th>
+        <td class="align-right" id="priceTotal">$0</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2" class="tertiary">
+          <small>Estimations based on New York, United States</small>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="form__footer ">
+    <button class="btn  first js-toggle-cart" id="continueShopping">Continue Shopping</button>
+    <button class="btn yellow-btn" onclick="payNow()">Pay Now</button>
+    <button class="btn me-5 ms-0 px-4 red-btn" onclick="emptyCart()" id="emptyCart">
+      <i class="fa-solid fa-trash me-2"></i> Empty Cart
+    </button>
+  </div>
+</div>
+  `;
+  cartTotalsDiv.innerHTML = cartTotalsContent;
+  const cartListDiv = document.querySelector("#cartList");
+  cartListDiv.parentNode.insertBefore(cartTotalsDiv, cartListDiv.nextSibling);
+  cartTotalsCreated = true;
+}
+
+
+
+
 }
 function removeFromCart(productId) {
   const cartItem = document.getElementById(`cart-item-${productId}`);
@@ -271,6 +305,22 @@ function decreaseQuantity(productId) {
       if (currentQuantity > 1) {
           quantityElement.textContent = currentQuantity - 1;
       }
+  }
+}
+
+const cartIcon = document.querySelector('.js-toggle-cart');
+cartIcon.addEventListener('click', () => {
+  toggleCartVisibility();
+});
+
+
+
+function toggleCartVisibility() {
+  const cartContainer = document.getElementById('cartContainer');
+  if (cartContainer.style.display === 'none') {
+    cartContainer.style.display = 'block';
+  } else {
+    cartContainer.style.display = 'none';
   }
 }
 
